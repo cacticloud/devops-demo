@@ -1,0 +1,22 @@
+image:
+  repository: harbor.k8s.local/course/devops-demo
+  tag: v0.1 
+  pullPolicy: IfNotPresent
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  path: /
+  pathType: Prefix
+  tls: []
+  hosts:
+    - devops-demo.k8s.local
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 128Mi
+
